@@ -4,11 +4,8 @@ import { CreateMessageDto } from './dto/create-message.dto';
 
 @Injectable()
 export class MessageService {
-    messageRepo : MessageRepository;
 
-    constructor(){
-        this.messageRepo = new MessageRepository()
-    }
+    constructor(public messageRepo : MessageRepository){}
 
     findOne(id:string){
       return this.messageRepo.findOne(id)
